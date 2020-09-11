@@ -113,7 +113,7 @@ const { error, printTestResults, printSupportedPresets, printListSchemas } = req
     .then(async (res) => {
       await printTestResults(res, { showInfo })
       if (testOutput)
-        fs.writeFileSync(testOutput, JSON.stringify(err.res, null, 2))
+        fs.writeFileSync(testOutput, JSON.stringify(res, null, 2))
       return process.exit()
     })
     .catch(async (err) => {
